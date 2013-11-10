@@ -1,0 +1,5 @@
+Select emp.empId, emp.EmpName, dept.deptId, dept.deptname
+from employee emp join department dept
+on ( emp.deptId = dept.deptId )
+where emp.salary > 5000
+and dept.deptname like '%admin%';

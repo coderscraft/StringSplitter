@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="StringSplitter" default="compress">
+    <echo message="Build Started" />
+    
+    <target name="init" depends="clean">
+         <mkdir dir="build/classes" />
+		 <mkdir dir="dist" />
+    </target>
+    
+    <target name="compile" depends="init">
+          <javac srcdir="." destdir="build/classes" />
+    </target>     
+
+    <target name="compress" depends="compile">
+          <jar destfile="dist/StringSplitter-1.0.0.jar" basedir="build/classes"  excludes="com\jrcube\text\test\**" />
+    </target>
+    
+    <target name="clean">
+        <delete dir="build" />
+        <delete dir="dist" />
+    </target>
+
+</project> 
